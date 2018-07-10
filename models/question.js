@@ -1,4 +1,3 @@
-import { Schema } from 'mongoose';
 
 const mongoose = require('mongoose')
 
@@ -7,12 +6,15 @@ const Question = mongoose.model('Question', new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	type: {
-
+	category: {
+		type: String,
+		required: true
 	},
 	answers: {
-		type: String, 
-		required: true
+		type: [String], 
+	},
+	isValid : {
+		type: Boolean
 	}
 }))
 

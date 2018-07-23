@@ -13,8 +13,7 @@ router.post('/', async(req, res) => {
 	let question = new Question({
 		question: req.body.question,
 		category: req.body.category,
-		answers: req.body.answers,
-		isValid: req.body.isValid
+		answers: req.body.answers		
 	})
 	question = await question.save()
 	res.send(question)

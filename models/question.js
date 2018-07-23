@@ -10,12 +10,18 @@ const Question = mongoose.model('Question', new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	answers: {
-		type: [String], 
-	},
-	isValid : {
-		type: Boolean
-	}
+	answers: [
+		{
+			answer: {
+				type: String
+			},
+			valid: {
+				type: Boolean
+			}
+		
+		}
+	]
+
 }))
 
 

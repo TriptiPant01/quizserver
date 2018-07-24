@@ -4,9 +4,10 @@ const app = express()
 const question = require('./routes/question')
 const user = require('./routes/user')
 
-mongoose.connect('mongodb://localhost/quiz')
-.then(() => console.log('Connected to mongodb server'))
-.catch((e) => console.log('Failed to connect'))
+const mongoURI = 'mongodb://localhost/quiz';
+mongoose.connect(mongoURI)
+    .then(() => console.log('Connected to mongodb server'))
+    .catch((e) => console.log('Failed to connect', e))
 
 app.use(express.json())
 app.use('/api/question', question)
